@@ -1,16 +1,23 @@
 <resources>
 
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar" >
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
+
     </style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+
     </style>
+
+    <color name="ActionBarColor">#110022</color>
+    <color name="background">#000033</color>
+    <color name="ActionBarTitle">#0963a3</color>
+    <color name="ButtonColor">#1ba1e2</color>
 
 </resources>

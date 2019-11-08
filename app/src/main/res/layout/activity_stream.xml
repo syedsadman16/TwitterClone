@@ -4,7 +4,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".StreamActivity">
+tools:context=".Activities.StreamActivity">
 
 
 
@@ -18,6 +18,7 @@ tools:context=".StreamActivity">
             android:id="@+id/twitterFeedRV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/ActionBarTitle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

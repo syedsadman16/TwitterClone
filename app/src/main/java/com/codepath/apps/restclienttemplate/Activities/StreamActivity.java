@@ -1,7 +1,8 @@
-package com.codepath.apps.restclienttemplate;
+package com.codepath.apps.restclienttemplate.Activities;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,7 +18,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.codepath.apps.restclienttemplate.Networking.RestClient;
+import com.codepath.apps.restclienttemplate.Networking.TwitterApplication;
+import com.codepath.apps.restclienttemplate.R;
+import com.codepath.apps.restclienttemplate.Adapters.RecyclerAdapter;
 import com.codepath.apps.restclienttemplate.fragments.TweetDialogFragment;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
@@ -37,6 +43,7 @@ public class StreamActivity extends AppCompatActivity {
     List<Tweet> tweetsList;
     RecyclerView twitterFeedRV;
     SwipeRefreshLayout swipeRefreshLayout;
+    public static String TAG = "StreamActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +52,7 @@ public class StreamActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar(); // or getActionBar();
         getSupportActionBar().setTitle("Twitter");
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00bfff")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#110011")));
         actionBar.setLogo(R.drawable.twitter);
         actionBar.setDisplayUseLogoEnabled(true);
 
@@ -68,7 +75,7 @@ public class StreamActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
-                        Log.e("StreamActivity", throwable + "");
+                        Log.e(TAG, throwable + "");
                     }
                 });
             }
@@ -82,11 +89,13 @@ public class StreamActivity extends AppCompatActivity {
         twitterFeedRV.setAdapter(adapter);
         twitterFeedRV.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
 
+        //Return the tweet list as json
         restClient = TwitterApplication.getRestClient(this);
         restClient.getTweetList(new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
                 JSONArray jsonArray = json.jsonArray;
+                Log.i(TAG,jsonArray+"");
                 try {
                     adapter.clear();
                     adapter.addAll(Tweet.jsonDataArray(jsonArray));

@@ -1,7 +1,9 @@
-package com.codepath.apps.restclienttemplate;
+package com.codepath.apps.restclienttemplate.Networking;
 
 import android.content.Context;
 
+import com.codepath.apps.restclienttemplate.BuildConfig;
+import com.codepath.apps.restclienttemplate.R;
 import com.codepath.asynchttpclient.RequestParams;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.codepath.oauth.OAuthBaseClient;
@@ -69,6 +71,13 @@ public class RestClient extends OAuthBaseClient {
 		RequestParams params = new RequestParams();
 		params.put("status", tweet);
 		client.post(apiUrl, params, "", handler);
+	}
+
+	public void getCurrentUser(JsonHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("/account/verify_credentials.json");
+		RequestParams params = new RequestParams();
+		params.put("include_email", true);
+		client.get(apiUrl, params, handler);
 	}
 
 

@@ -3,7 +3,8 @@
 **TwitterClone** is an android app that allows a user to view his Twitter timeline and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
 ## TwitterClone Part 2
-Time spent: **3** hours spent in total
+Time spent: **4** hours spent in total
+
 The following **required** functionality is completed:
 
 - [X] User can **compose and post a new tweet**
@@ -39,7 +40,7 @@ The following **bonus** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [X] Dark theme
 
 ## Video Walkthrough
 

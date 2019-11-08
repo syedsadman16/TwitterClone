@@ -1,4 +1,4 @@
-package com.codepath.apps.restclienttemplate;
+package com.codepath.apps.restclienttemplate.Activities;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -7,6 +7,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 
+import com.codepath.apps.restclienttemplate.Activities.StreamActivity;
+import com.codepath.apps.restclienttemplate.Networking.RestClient;
+import com.codepath.apps.restclienttemplate.Networking.TwitterApplication;
+import com.codepath.apps.restclienttemplate.R;
 import com.codepath.apps.restclienttemplate.models.SampleModel;
 import com.codepath.apps.restclienttemplate.models.SampleModelDao;
 import com.codepath.oauth.OAuthLoginActionBarActivity;
