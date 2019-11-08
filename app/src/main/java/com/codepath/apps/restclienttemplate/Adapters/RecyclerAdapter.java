@@ -13,12 +13,13 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.codepath.apps.restclienttemplate.R;
 import com.codepath.apps.restclienttemplate.Models.Tweet;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class RecyclerAdapter extends
         RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
@@ -69,8 +70,9 @@ public class RecyclerAdapter extends
             screen_name.setText("@"+tweet.user.screen_name);
             tweet_body.setText(tweet.tweet_body);
             creation_time.setText(getRelativeTimeAgo(tweet.created_at) + "s");
-            Glide.with(mContext).load(tweet.user.image_url).placeholder(R.drawable.placeholder)
-                    .error(R.drawable.imagenotfound).apply(new RequestOptions()).into(profile_img);
+            Glide.with(mContext).load(tweet.user.image_url)
+                    .transform(new RoundedCornersTransformation(90, 0))
+                    .into(profile_img);
         }
 
     }

@@ -11,6 +11,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,7 +51,6 @@ public class TweetDialogFragment extends DialogFragment {
         screen_name_field = (TextView) rootView.findViewById(R.id.screen_name);
         imageView = rootView.findViewById(R.id.imageView);
         client = TwitterApplication.getRestClient(getContext());
-
 
         client.getCurrentUser(new JsonHttpResponseHandler() {
             @Override
@@ -96,6 +96,8 @@ public class TweetDialogFragment extends DialogFragment {
                         public void onSuccess(int statusCode, Headers headers, JSON json) {
                             Toast.makeText(getContext(), "Tweet posted", Toast.LENGTH_SHORT).show();
                             goBack();
+                            // run a background job and once complete
+                            ProgressDialog.show(getContext(), "Tweeting...", "");
                         }
 
                         @Override

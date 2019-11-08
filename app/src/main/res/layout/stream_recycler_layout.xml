@@ -70,6 +70,51 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textColor="@android:color/white" />
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:visibility="visible">
+
+            <ImageView
+            android:id="@+id/heartImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivMedia"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/heart"
+            android:tint="#EAEEF1"
+                android:layout_marginRight="50dp"/>
+
+            <ImageView
+                android:id="@+id/commentImage"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="50dp"
+                android:layout_below="@+id/ivMedia"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/comment"
+                android:tint="#EAEEF1" />
+
+            <ImageView
+                android:id="@+id/reImage"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_below="@+id/ivMedia"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/retweet"
+                android:tint="#EAEEF1" />
+        </LinearLayout>
+
     </LinearLayout>
 
 
