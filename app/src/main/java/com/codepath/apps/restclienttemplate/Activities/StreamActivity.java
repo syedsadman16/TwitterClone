@@ -2,7 +2,6 @@ package com.codepath.apps.restclienttemplate.Activities;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,19 +13,18 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.codepath.apps.restclienttemplate.Networking.RestClient;
 import com.codepath.apps.restclienttemplate.Networking.TwitterApplication;
 import com.codepath.apps.restclienttemplate.R;
 import com.codepath.apps.restclienttemplate.Adapters.RecyclerAdapter;
-import com.codepath.apps.restclienttemplate.fragments.TweetDialogFragment;
-import com.codepath.apps.restclienttemplate.models.Tweet;
+import com.codepath.apps.restclienttemplate.Fragments.TweetDialogFragment;
+import com.codepath.apps.restclienttemplate.Models.Tweet;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -53,8 +51,8 @@ public class StreamActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar(); // or getActionBar();
         getSupportActionBar().setTitle("Twitter");
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#110011")));
-        actionBar.setLogo(R.drawable.twitter);
-        actionBar.setDisplayUseLogoEnabled(true);
+        actionBar.setLogo(R.drawable.feather);
+        actionBar.setDisplayUseLogoEnabled(false);
 
 
         //pull to refresh
@@ -111,26 +109,14 @@ public class StreamActivity extends AppCompatActivity {
             }
         });
 
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle presses on the action bar items
-        switch (item.getItemId()) {
-            case R.id.miCompose:
-                //launch an intent
+        FloatingActionButton myFab = (FloatingActionButton) findViewById(R.id.miCompose);
+        myFab.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 showEditDialog();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+            }
+        });
+
     }
 
     private void showEditDialog() {

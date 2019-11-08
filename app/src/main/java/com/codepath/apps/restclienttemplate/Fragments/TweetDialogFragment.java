@@ -1,6 +1,6 @@
-package com.codepath.apps.restclienttemplate.fragments;
+package com.codepath.apps.restclienttemplate.Fragments;
 
-import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,7 +22,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.codepath.apps.restclienttemplate.R;
 import com.codepath.apps.restclienttemplate.Networking.RestClient;
 import com.codepath.apps.restclienttemplate.Networking.TwitterApplication;
-import com.codepath.apps.restclienttemplate.models.Tweet;
+import com.codepath.apps.restclienttemplate.Models.Tweet;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 
 import org.json.JSONException;
@@ -86,6 +86,9 @@ public class TweetDialogFragment extends DialogFragment {
                 if(tweet_body.isEmpty()){
                     tweet_edit_field.setError("Cannot be empty");
                 }
+                else if(tweet_body.length() > 280){
+                    tweet_edit_field.setError("Limit reached!");
+                }
                 else {
 
                     client.postTweet(tweet_body, new JsonHttpResponseHandler() {
@@ -147,6 +150,7 @@ public class TweetDialogFragment extends DialogFragment {
     }
 
     public void goBack(){
+        // Hides keyboard and goes to previous activity
         final InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
         getActivity().onBackPressed();

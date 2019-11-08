@@ -20,4 +20,13 @@
     <color name="ActionBarTitle">#0963a3</color>
     <color name="ButtonColor">#1ba1e2</color>
 
+    <style name="counterText">
+        <item name="android:textColor">#FFFF</item>
+    </style>
+
+    <style name="counterOverride">
+        <item name="android:textColor">#ff0000</item>
+    </style>
+
+
 </resources>

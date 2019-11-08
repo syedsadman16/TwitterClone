@@ -16,32 +16,46 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="Your name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toStartOf="@+id/create_tweet"
         app:layout_constraintStart_toEndOf="@+id/back_button"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/tweet_edit_field"
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="392dp"
-        android:background="@color/ActionBarColor"
-        android:hint="Enter a Tweet!"
-        android:imeOptions="actionDone"
         android:layout_weight="1"
         android:inputType="textCapSentences|textMultiLine"
         android:textColor="@android:color/background_light"
         android:textColorHint="#FFFFFF"
+        app:counterEnabled="true"
+        app:counterMaxLength="280"
+        app:counterOverflowTextAppearance="@style/counterOverride"
+        app:counterTextAppearance="@style/counterText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/screen_name"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintVertical_bias="0.061">
+
+        <EditText
+            android:id="@+id/tweet_edit_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/ActionBarColor"
+            android:hint="Enter a Tweet!"
+            android:imeOptions="actionDone"
+            android:inputType="textCapSentences|textMultiLine"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/back_button"

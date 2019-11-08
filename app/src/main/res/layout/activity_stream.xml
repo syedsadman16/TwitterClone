@@ -6,10 +6,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".Activities.StreamActivity">
 
-
-
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -25,5 +22,17 @@ tools:context=".Activities.StreamActivity">
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:id="@+id/miCompose"
+        app:showAsAction="ifRoom"
+        android:layout_margin="16dp"
+        android:src="@drawable/feather"
+        app:backgroundTint="#ff1da1f2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

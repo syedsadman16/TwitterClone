@@ -3,7 +3,7 @@
 **TwitterClone** is an android app that allows a user to view his Twitter timeline and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
 ## TwitterClone Part 2
-Time spent: **4** hours spent in total
+Time spent: **4.5** hours spent in total
 
 The following **required** functionality is completed:
 
@@ -12,7 +12,7 @@ The following **required** functionality is completed:
   - [X] User can then enter a new tweet and post this to twitter
   - [X] User is taken back to home timeline with **new tweet visible** in timeline
   - [X] Newly created tweet should be manually inserted into the timeline and not rely on a full refresh
-  - [ ] User can **see a counter with total number of characters left for tweet** on compose tweet page
+  - [X] User can **see a counter with total number of characters left for tweet** on compose tweet page
 
 The following **optional** features are implemented:
 
@@ -41,6 +41,7 @@ The following **bonus** features are implemented:
 The following **additional** features are implemented:
 
 - [X] Dark theme
+- [X] Floating action bar
 
 ## Video Walkthrough
 
@@ -51,7 +52,6 @@ Here's a walkthrough of implemented user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
-- Creating new fragment to update actvity feed instead of using intent
 
 
 ---

@@ -7,12 +7,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 
-import com.codepath.apps.restclienttemplate.Activities.StreamActivity;
 import com.codepath.apps.restclienttemplate.Networking.RestClient;
 import com.codepath.apps.restclienttemplate.Networking.TwitterApplication;
 import com.codepath.apps.restclienttemplate.R;
-import com.codepath.apps.restclienttemplate.models.SampleModel;
-import com.codepath.apps.restclienttemplate.models.SampleModelDao;
+import com.codepath.apps.restclienttemplate.Models.SampleModel;
+import com.codepath.apps.restclienttemplate.Models.SampleModelDao;
 import com.codepath.oauth.OAuthLoginActionBarActivity;
 
 public class LoginActivity extends OAuthLoginActionBarActivity<RestClient> {
